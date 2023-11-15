@@ -6,6 +6,10 @@ public enum NeighborType { Left, Right, Above, Below }
 enum CellType { Normal, Start, End }
 
 public class Cell {
+
+    public int cost = 0;
+    public bool isVisited = false;
+
     int _x;
     int _y;
     CellType cellType;

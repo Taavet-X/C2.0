@@ -83,7 +83,11 @@ public class DungeonMap : MonoBehaviour
             go.transform.localPosition = new Vector2(mapCellSize * cellsInDungeon[i].X, mapCellSize * cellsInDungeon[i].Y) - offset;
             MapCell mapCell = go.GetComponent<MapCell>();
             mapCell.Initialize(cellsInDungeon[i]);
-            DungeonCells.Add(new Vector2(cellsInDungeon[i].X, cellsInDungeon[i].Y), mapCell);
+            try{
+                DungeonCells.Add(new Vector2(cellsInDungeon[i].X, cellsInDungeon[i].Y), mapCell);
+            } catch(Exception e){
+
+            }             
         }
         onMapGenerationComplete?.Invoke();
     }
